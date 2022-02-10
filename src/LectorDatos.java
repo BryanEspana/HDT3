@@ -13,7 +13,7 @@ public class LectorDatos {
             bw = new BufferedWriter(w);
             wr = new PrintWriter(bw);
             int min = 1;
-		    int max = 10;
+		    int max = 3000;
             int i;
             String texto = "";
 		    for(i = min; i <=max; i++) {
@@ -34,7 +34,7 @@ public class LectorDatos {
 
         //Crear Archivo
         LectorDatos lw=new LectorDatos();
-        lw.Escribir("C:\\Users\\HP\\Desktop\\Universidad\\Segundo año\\Algoritmos y estructura datos\\HDT3\\datos.txt");
+        lw.Escribir("C:\\Users\\Bryan\\OneDrive - Universidad del Valle de Guatemala\\Documentos\\UVG\\SEMESTRE III\\Algoritmos y Estructura de Datos\\Hoja de trabajo 3\\HDT3\\src\\datos.txt");
         //Metodo para generar numeros
         
         //Terminar conteo de medidor de tiempo

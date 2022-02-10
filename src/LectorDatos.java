@@ -8,16 +8,17 @@ public class LectorDatos {
         PrintWriter wr;
 
         try{
-            String temp = "";
-            String bfRead;
             f = new File(nombre);
             w =new FileWriter(f);
             bw = new BufferedWriter(w);
             wr = new PrintWriter(bw);
+            int min = 1;
+		    int max = 10;
             int i;
-            String texto="";
-            for(i = 1; i<=10;i++){
-                texto += String.valueOf(i+" ");
+            String texto = "";
+		    for(i = min; i <=max; i++) {
+			    int getRandomValue = (int) (Math.random()*(max-min)) + min;
+			    texto += String.valueOf(getRandomValue+" ");
             }
             wr.write(texto);
             wr.close();

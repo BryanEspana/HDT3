@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 * Universidad del Valle de Guatemala
 * @author Bryan Espana 21550 | Javier Prado - 21486 | Angel Perez - 21298
@@ -6,12 +8,16 @@
 */
 
 public class gnomeSort{
+    LectorDatos ld = new LectorDatos();
+    ArrayList<Integer> arrayint = ld.llamarArray();
+    int[] array = {5,8,2,3,4,1};
     public void gnome(){
-        LectorDatos ld = new LectorDatos();
+        
           //Array creado
-          //int[] array = {5,8,2,3,4,1};
-          String[] array = ld.llamarArray();
-          Gnome objeto = new Gnome();
+          
+          
+          System.out.println(arrayint);
+          gnomeSort objeto = new gnomeSort();
           //Imprime el array como se creo previamente
           System.out.println("Arreglo original: ");
           for(int i = 0; i < array.length; i++){
@@ -50,5 +56,9 @@ public class gnomeSort{
             TFin = System.currentTimeMillis(); 
             tiempo = TFin - TInicio; 
             System.out.println("Tiempo de ejecución en milisegundos: " + tiempo+"ms");
+    }
+    public void gnomecomplete(){
+        gnome();
+        gnomo(array);
     }
 }

@@ -8,7 +8,7 @@ import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 public class LectorDatos {
-    ArrayList<String> array = new ArrayList();
+    ArrayList<Integer> array = new ArrayList<Integer>();
     public void Escribir(String nombre){
         File f;
         FileWriter w;
@@ -37,6 +37,7 @@ public class LectorDatos {
     }
     public String leerArchivo(String direccion){
         String texto = "";
+        int numero =0;
         try{
             BufferedReader bf = new BufferedReader(new FileReader("datos.txt"));
             String temp = "";
@@ -45,16 +46,14 @@ public class LectorDatos {
                 temp = temp + bfRead; // guardado el texto del archivo
             }
             texto = temp;
-            array.add(texto);
-            System.out.println("Datos del array "+array);
-
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"No se a podido encontrar el archvio\nIntente de nuevo "+ e);
+            JOptionPane.showMessageDialog(null,"No se a podido encontrar el archivo\nIntente de nuevo"+e);
         }
+        
         return texto;
     }
 
-    public String [] llamarArray(){
+    public ArrayList<Integer> llamarArray(){
         return array;
         }
 

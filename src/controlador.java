@@ -1,7 +1,8 @@
-import javax.swing.JOptionPane;
+
 public class controlador {
     public void program(){
         vista vista = new vista();
+        gnomeSort gnomeSort = new gnomeSort();
         int opcion = vista.menu1();        
         switch(opcion){
             //Gnome Sort
@@ -10,6 +11,7 @@ public class controlador {
                 switch(opcion){
                     case 1:
                         System.out.println("10");
+                        gnomeSort.gnomecomplete();
                         break;
                     case 2:
                         System.out.println("50");

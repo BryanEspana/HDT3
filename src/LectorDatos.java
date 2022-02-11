@@ -6,7 +6,9 @@
 */
 import java.io.*;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 public class LectorDatos {
+    ArrayList<String> array = new ArrayList();
     public void Escribir(String nombre){
         File f;
         FileWriter w;
@@ -18,13 +20,14 @@ public class LectorDatos {
             bw = new BufferedWriter(w);
             wr = new PrintWriter(bw);
             int min = 1;
-		    int max = 3000;
+            int max = 10;
             int i;
             String texto = "";
-		    for(i = min; i <=max; i++) {
-			    int getRandomValue = (int) (Math.random()*(max-min)) + min;
-			    texto += String.valueOf(getRandomValue+" ");
+            for(i = min; i <=max; i++) {
+                int getRandomValue = (int) (Math.random()*(max-min)) + min;
+                texto += String.valueOf(getRandomValue+" ");
             }
+
             wr.write(texto);
             wr.close();
             bw.close();
@@ -42,6 +45,9 @@ public class LectorDatos {
                 temp = temp + bfRead; // guardado el texto del archivo
             }
             texto = temp;
+            array.add(texto);
+            System.out.println("Datos del array "+array);
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se a podido encontrar el archvio\nIntente de nuevo "+ e);
         }

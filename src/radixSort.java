@@ -11,7 +11,9 @@ import javax.sound.sampled.SourceDataLine;
 
 public class redixSort{
 
+
     public void radix(int[] arreglo){
+
         int x, i, j;
         for(x=Integer.SIZE-1;x>0;x--){ 
             int auxiliar[] = new int[arreglo.length];

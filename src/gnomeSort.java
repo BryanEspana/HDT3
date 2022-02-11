@@ -7,8 +7,10 @@
 
 public class gnomeSort{
     public void gnome(){
+        LectorDatos ld = new LectorDatos();
           //Array creado
-          int[] array = {5,8,2,3,4,1};
+          //int[] array = {5,8,2,3,4,1};
+          String[] array = ld.llamarArray();
           Gnome objeto = new Gnome();
           //Imprime el array como se creo previamente
           System.out.println("Arreglo original: ");

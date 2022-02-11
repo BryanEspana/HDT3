@@ -53,6 +53,11 @@ public class LectorDatos {
         }
         return texto;
     }
+
+    public String [] llamarArray(){
+        return array;
+        }
+
     /*public static void main(String[] args){
         
         //Para la implementacion de radix Sort

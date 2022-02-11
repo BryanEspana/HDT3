@@ -4,7 +4,6 @@
 * Algoritmos y estructura de datos
 * Seccion 10 
 */
-
 import java.io.*;
 import javax.swing.JOptionPane;
 public class LectorDatos {
@@ -13,7 +12,6 @@ public class LectorDatos {
         FileWriter w;
         BufferedWriter bw;
         PrintWriter wr;
-
         try{
             f = new File(nombre);
             w =new FileWriter(f);
@@ -34,7 +32,22 @@ public class LectorDatos {
             JOptionPane.showMessageDialog(null,"Ha ocurrido un error "+ e);
         }
     }
-    public static void main(String[] args){
+    public String leerArchivo(String direccion){
+        String texto = "";
+        try{
+            BufferedReader bf = new BufferedReader(new FileReader("datos.txt"));
+            String temp = "";
+            String bfRead;
+            while((bfRead = bf.readLine())!=null){
+                temp = temp + bfRead; // guardado el texto del archivo
+            }
+            texto = temp;
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"No se a podido encontrar el archvio\nIntente de nuevo "+ e);
+        }
+        return texto;
+    }
+    /*public static void main(String[] args){
         
         //Para la implementacion de radix Sort
         radixSort ordenar = new radixSort();
@@ -65,14 +78,7 @@ public class LectorDatos {
         TFin = System.currentTimeMillis(); 
         tiempo = TFin - TInicio; 
         System.out.println("Tiempo de ejecucion en milisegundos: " + tiempo+"ms");
-    
-    
-        
-        
-        
-        
-        } 
-    
-    }
+    }*/
+}
 
 

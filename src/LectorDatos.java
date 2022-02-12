@@ -9,7 +9,8 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 public class LectorDatos {
     ArrayList<Integer> array = new ArrayList<Integer>();
-    public void Escribir(String nombre){
+
+    public void Escribir(String nombre, int max){
         File f;
         FileWriter w;
         BufferedWriter bw;
@@ -20,7 +21,7 @@ public class LectorDatos {
             bw = new BufferedWriter(w);
             wr = new PrintWriter(bw);
             int min = 1;
-            int max = 10;
+            max = max;
             int i;
             String texto = "";
             for(i = min; i <=max; i++) {
@@ -39,7 +40,7 @@ public class LectorDatos {
         String texto = "";
         int numero =0;
         try{
-            BufferedReader bf = new BufferedReader(new FileReader("datos.txt"));
+            BufferedReader bf = new BufferedReader(new FileReader(direccion));
             String temp = "";
             String bfRead;
             while((bfRead = bf.readLine())!=null){
@@ -55,7 +56,26 @@ public class LectorDatos {
 
     public ArrayList<Integer> llamarArray(){
         return array;
+
+    }
+
+    public int[] llamarArrayListaNormal(String contenidoDelArchivo){
+        String[] numerosSeparados = contenidoDelArchivo.split(" ");
+
+        int[] numerosEnLita = new int[numerosSeparados.length];
+
+        for (int i = 0; i < numerosEnLita.length; i++) {
+            int num = Integer.parseInt(numerosSeparados[i]);
+            numerosEnLita[i] = num;
         }
+
+        // System.out.println("Resultado de la lista normal en java");
+        // for (int i = 0; i < numerosEnLita.length; i++) {
+        //     System.out.println("Numero : " + numerosEnLita[i]);
+        // }
+        
+        return numerosEnLita;
+    }
 
     /*public static void main(String[] args){
         

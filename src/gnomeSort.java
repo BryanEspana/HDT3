@@ -7,19 +7,21 @@ import java.util.ArrayList;
 * Seccion 10 
 */
 
-public class gnomeSort{
-    LectorDatos ld = new LectorDatos();
-    ArrayList<Integer> arrayint = ld.llamarArray();
-    int[] array = {5,8,2,3,4,1};
+public class GnomeSort{
+    
+    LectorDatos lw = new LectorDatos();
+    ArrayList<Integer> arrayint = lw.llamarArray();
+    
     public void gnome(){
-        
-          //Array creado
-          
-          
-          System.out.println(arrayint);
-          gnomeSort objeto = new gnomeSort();
+        String numerosEnStr = lw.leerArchivo("datos.txt");
+        System.out.println("Los datos del archivo txt: " + numerosEnStr);
+        GnomeSort testing = new GnomeSort();
+        int[] array = lw.llamarArrayListaNormal(numerosEnStr);
+        testing.gnomo(array);                  
+        System.out.println(arrayint);
+        GnomeSort objeto = new GnomeSort();
           //Imprime el array como se creo previamente
-          System.out.println("Arreglo original: ");
+        System.out.println("Arreglo original: ");
           for(int i = 0; i < array.length; i++){
               System.out.println(array[i]);
           }
@@ -27,6 +29,7 @@ public class gnomeSort{
   
           objeto.gnomo(array);
       }
+      
       //Se crea un metodo para ordenar los datos
       public void gnomo (int[] array){
           //MEDIR TIEMPO
@@ -57,8 +60,5 @@ public class gnomeSort{
             tiempo = TFin - TInicio; 
             System.out.println("Tiempo de ejecución en milisegundos: " + tiempo+"ms");
     }
-    public void gnomecomplete(){
-        gnome();
-        gnomo(array);
-    }
+
 }

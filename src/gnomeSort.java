@@ -59,10 +59,14 @@ public class GnomeSort{
                 System.out.println(array[i]);
             }
             System.out.println("");
-            //FIN - Medir Tiempo
-            TFin = System.currentTimeMillis(); 
-            tiempo = TFin - TInicio; 
-            System.out.println("Tiempo de ejecución en milisegundos: " + tiempo+"ms");
+      //FIN - Medir Tiempo
+      TFin = System.currentTimeMillis(); 
+      tiempo = TFin - TInicio; 
+      System.out.println("Tiempo de ejecución en milisegundos: " + tiempo+"ms");
+
+            
+            
     }
+            
 
 }

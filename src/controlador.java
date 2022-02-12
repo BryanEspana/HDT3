@@ -16,6 +16,7 @@ public class controlador {
         SelectionSort selectionSort = new SelectionSort();
         quickSort quickst = new quickSort();
         radixSort radix = new radixSort();
+        mergeSort merge = new mergeSort();
 
         int opcion = vista.menu1();    
         String numerosEnStr = lw.leerArchivo("datos.txt");    
@@ -84,34 +85,54 @@ public class controlador {
             opcion = vista.menu2();
             switch(opcion){
                 case 1:
-                    System.out.println("10m");
+                    System.out.println("Merge con 10 datos");
+                    lw.Escribir("datos.txt",10);
+                    merge.merge();
                     break;
                 case 2:
-                    System.out.println("50m");
+                    System.out.println("Merge con 50 datos");
+                    lw.Escribir("datos.txt",50);
+                    merge.merge();
                     break;                      
                 case 3:
-                    System.out.println("100m");
+                    System.out.println("Merge con 100 datos");
+                    lw.Escribir("datos.txt",100);
+                    merge.merge();
                     break;
                 case 4:
-                    System.out.println("500m");
+                    System.out.println("Merge con 500 datos");
+                    lw.Escribir("datos.txt",500);
+                    merge.merge();
                     break;     
                 case 5:
-                    System.out.println("700m");
+                    System.out.println("Merge con 700 datos");
+                    lw.Escribir("datos.txt",700);
+                    merge.merge();
                     break;        
                 case 6:
-                    System.out.println("1000m");
+                    System.out.println("Merge con 1000 datos");
+                    lw.Escribir("datos.txt",1000);
+                    merge.merge();
                     break;       
                 case 7:
-                    System.out.println("1500m");
+                    System.out.println("Merge con 1500 datos");
+                    lw.Escribir("datos.txt",1500);
+                    merge.merge();
                     break;    
                 case 8:
-                    System.out.println("2000m");
+                    System.out.println("Merge con 2000 datos");
+                    lw.Escribir("datos.txt",2000);
+                    merge.merge();
                     break; 
                 case 9:
-                    System.out.println("2500m");
+                    System.out.println("Merge con 2500 datos");
+                    lw.Escribir("datos.txt",2500);
+                    merge.merge();
                     break; 
                 case 10:
-                    System.out.println("3000m");
+                    System.out.println("Merge con 3000 datos");
+                    lw.Escribir("datos.txt",3000);
+                    merge.merge();
                     break; 
                     default:
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");

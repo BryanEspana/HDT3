@@ -35,7 +35,12 @@ public void quick(){
     /***
 	 * This method is used to show the sorting quickSort algorithm
 	 */
+
 public void quickSt(int[] array, int low, int high) {
+    //INICIO - Medir Tiempo
+    long TInicio, TFin, tiempo;
+    TInicio = System.currentTimeMillis();
+    
     if (array == null || array.length == 0)
         return;
 
@@ -69,8 +74,15 @@ public void quickSt(int[] array, int low, int high) {
     // Ordenar recursivamente dos subpartes
     if (low < j)
         quickSt(array, low, j);
+    
+        
 
     if (high > i)
         quickSt(array, i, high);
+        System.out.println("");
+        //FIN - Medir Tiempo
 }
+
+   
+
 }

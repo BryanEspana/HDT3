@@ -11,7 +11,9 @@ public class GnomeSort{
     
     LectorDatos lw = new LectorDatos();
     ArrayList<Integer> arrayint = lw.llamarArray();
-    
+    /***
+	 * This method is used to show the sorting gnome algorithm
+	 */
     public void gnome(){
         String numerosEnStr = lw.leerArchivo("datos.txt");
         System.out.println("Los datos del archivo txt: " + numerosEnStr);
@@ -30,7 +32,9 @@ public class GnomeSort{
           objeto.gnomo(array);
       }
       
-      //Se crea un metodo para ordenar los datos
+    /***
+	 * This method is the sort algorithm for gnome
+	 */
       public void gnomo (int[] array){
           //MEDIR TIEMPO
           long TInicio, TFin, tiempo;

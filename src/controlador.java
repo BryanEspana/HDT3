@@ -4,7 +4,10 @@ public class controlador {
         vista vista = new vista();
         LectorDatos lw = new LectorDatos();
         GnomeSort gnomeSort = new GnomeSort();
-        int opcion = vista.menu1();        
+        SelectionSort selectionSort = new SelectionSort();
+        radixSort radix = new radixSort();
+        int opcion = vista.menu1();    
+        String numerosEnStr = lw.leerArchivo("datos.txt");    
         switch(opcion){
             //Gnome Sort
             case 1:
@@ -107,36 +110,56 @@ public class controlador {
             opcion = vista.menu2();
             switch(opcion){
                 case 1:
-                    System.out.println("10s");
+                    System.out.println("Selection con 10 datos");
+                    lw.Escribir("datos.txt",10);
+                    selectionSort.selection();
                     break;
                 case 2:
-                    System.out.println("50s");
+                    System.out.println("Selection con 50 datos");
+                    lw.Escribir("datos.txt",50);
+                    selectionSort.selection();
                     break;                      
                 case 3:
-                    System.out.println("100s");
+                    System.out.println("Selection con 100 datos");
+                    lw.Escribir("datos.txt",100);
+                    selectionSort.selection();
                     break;
                 case 4:
-                    System.out.println("500s");
+                    System.out.println("Selection con 500 datos");
+                    lw.Escribir("datos.txt",500);
+                    selectionSort.selection();
                     break;     
                 case 5:
-                    System.out.println("700s");
+                    System.out.println("Selection con 700 datos");
+                    lw.Escribir("datos.txt",700);
+                    selectionSort.selection();
                     break;        
                 case 6:
-                    System.out.println("1000s");
+                    System.out.println("Selection con 700 datos");
+                    lw.Escribir("datos.txt",700);
+                    selectionSort.selection();
                     break;       
                 case 7:
-                    System.out.println("1500s");
+                    System.out.println("Selection con 1500 datos");
+                    lw.Escribir("datos.txt",1500);
+                    selectionSort.selection();
                     break;    
                 case 8:
-                    System.out.println("2000s");
+                    System.out.println("Selection con 2000 datos");
+                    lw.Escribir("datos.txt",2000);
+                    selectionSort.selection();
                     break; 
                 case 9:
-                    System.out.println("2500s");
+                    System.out.println("Selection con 2500 datos");
+                    lw.Escribir("datos.txt",2500);
+                    selectionSort.selection();
                     break; 
                 case 10:
-                    System.out.println("3000s");
+                    System.out.println("Selection con 3000 datos");
+                    lw.Escribir("datos.txt",3000);
+                    selectionSort.selection();
                     break; 
-                    default:
+                default:
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");
                     break;
             }break;
@@ -145,34 +168,54 @@ public class controlador {
             opcion = vista.menu2();
             switch(opcion){
                 case 1:
-                    System.out.println("10r");
+                    System.out.println("Radix con 10 datos");
+                    lw.Escribir("datos.txt",10);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;
                 case 2:
-                    System.out.println("50r");
+                    System.out.println("Radix con 50 datos");
+                    lw.Escribir("datos.txt",50);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;                      
                 case 3:
-                    System.out.println("100r");
+                    System.out.println("Radix con 100 datos");
+                    lw.Escribir("datos.txt",100);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;
                 case 4:
-                    System.out.println("500r");
+                    System.out.println("Radix con 500 datos");
+                    lw.Escribir("datos.txt",500);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;     
                 case 5:
-                    System.out.println("700r");
+                    System.out.println("Radix con 700 datos");
+                    lw.Escribir("datos.txt",700);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;        
                 case 6:
-                    System.out.println("1000r");
+                    System.out.println("Radix con 1000 datos");
+                    lw.Escribir("datos.txt",1000);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;       
                 case 7:
-                    System.out.println("1500r");
+                    System.out.println("Radix con 1500 datos");
+                    lw.Escribir("datos.txt",1500);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break;    
                 case 8:
-                    System.out.println("2000r");
+                    System.out.println("Radix con 2000 datos");
+                    lw.Escribir("datos.txt",2000);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break; 
                 case 9:
-                    System.out.println("2500r");
+                    System.out.println("Radix con 2500 datos");
+                    lw.Escribir("datos.txt",2500);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break; 
                 case 10:
-                    System.out.println("3000r");
+                    System.out.println("Radix con 3000 datos");
+                    lw.Escribir("datos.txt",3000);
+                    radix.radix(lw.llamarArrayListaNormal(numerosEnStr));
                     break; 
                     default:
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");

@@ -1,15 +1,27 @@
-
+/*
+* Universidad del Valle de Guatemala
+* @author Bryan Espana 21550 | Javier Prado - 21486 | Angel Perez - 21298
+* Algoritmos y estructura de datos
+* Seccion 10 
+*/
 public class controlador {
+    /***
+	 * This method is used to play de program
+	 */
     public void program(){
+        //Importar cada una de las clases
         vista vista = new vista();
         LectorDatos lw = new LectorDatos();
         GnomeSort gnomeSort = new GnomeSort();
         SelectionSort selectionSort = new SelectionSort();
+        quickSort quickst = new quickSort();
         radixSort radix = new radixSort();
+
         int opcion = vista.menu1();    
         String numerosEnStr = lw.leerArchivo("datos.txt");    
+        //Menu de Opciones
         switch(opcion){
-            //Gnome Sort
+            //Gnome Sort-------------------------------------------
             case 1:
                 opcion = vista.menu2();
                 switch(opcion){
@@ -67,7 +79,7 @@ public class controlador {
                         System.out.println("Error. Solo se pueden numeros del 1 al 10");
                         break;    
                 }break;
-            //Merge Sort
+            //Merge Sort------------------------------------------------------------
             case 2:
             opcion = vista.menu2();
             switch(opcion){
@@ -105,7 +117,7 @@ public class controlador {
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");
                     break;
             }break;
-            //Selection Sort
+            //Selection Sort--------------------------------------------------------
             case 3:
             opcion = vista.menu2();
             switch(opcion){
@@ -163,7 +175,7 @@ public class controlador {
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");
                     break;
             }break;
-            //Radix Sort
+            //Radix Sort----------------------------------------------------------------
             case 4:
             opcion = vista.menu2();
             switch(opcion){
@@ -221,46 +233,72 @@ public class controlador {
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");
                     break;
             }break;
-            //Quick Sort
+            //Quick Sort---------------------------------------------------------------
             case 5:
             opcion = vista.menu2();
             switch(opcion){
                 case 1:
-                    System.out.println("10q");
+                    System.out.println("Quick con 10 datos");
+                    lw.Escribir("datos.txt",10);
+                    quickst.quick();
                     break;
                 case 2:
-                    System.out.println("50q");
+                    System.out.println("Quick con 50 datos");
+                    lw.Escribir("datos.txt",50);
+                    quickst.quick();
                     break;                      
                 case 3:
-                    System.out.println("100q");
+                    System.out.println("Quick con 100 datos");
+                    lw.Escribir("datos.txt",100);
+                    quickst.quick();
                     break;
                 case 4:
-                    System.out.println("500q");
+                    System.out.println("Quick con 500 datos");
+                    lw.Escribir("datos.txt",500);
+                    quickst.quick();
                     break;     
                 case 5:
-                    System.out.println("700q");
+                    System.out.println("Quick con 700 datos");
+                    lw.Escribir("datos.txt",700);
+                    quickst.quick();
                     break;        
                 case 6:
-                    System.out.println("1000q");
+                    System.out.println("Quick con 1000 datos");
+                    lw.Escribir("datos.txt",1000);
+                    quickst.quick();
                     break;       
                 case 7:
-                    System.out.println("1500q");
+                    System.out.println("Quick con 1500 datos");
+                    lw.Escribir("datos.txt",1500);
+                    quickst.quick();
                     break;    
                 case 8:
-                    System.out.println("2000q");
+                    System.out.println("Quick con 2000 datos");
+                    lw.Escribir("datos.txt",2000);
+                    quickst.quick();
                     break; 
                 case 9:
-                    System.out.println("2500q");
+                    System.out.println("Quick con 2500 datos");
+                    lw.Escribir("datos.txt",2500);
+                    quickst.quick();
                     break; 
                 case 10:
-                    System.out.println("3000q");
+                    System.out.println("Quick con 3000 datos");
+                    lw.Escribir("datos.txt",3000);
+                    quickst.quick();
                     break; 
                     default:
                     System.out.println("Error. Solo se pueden numeros del 1 al 10");
                     break;
             }break;
-            default:
-            System.out.println("Error. Solo se pueden numeros del 1 al 5");
+            //Salir-----------------------------------------------------------------
+            case 6:
+                System.out.println("Finalizando programa...");
+                System.exit(0);
+            break;
+            //En caso de errores
+                default:
+                System.out.println("Error. Solo se pueden numeros del 1 al 6");
             break;
                 
 

@@ -1,35 +1,76 @@
-public class quickSort{
-    public class QuickSort {
+/*
+* Universidad del Valle de Guatemala
+* @author Bryan Espana 21550 | Javier Prado - 21486 | Angel Perez - 21298
+* Algoritmos y estructura de datos
+* Seccion 10 
+*/
 
-        public static void quickSort(Comparable[] list, int inf, int sup) {
-            int i = inf - 1;
-            int j = sup;
-            boolean flag = true;
-            Comparable temp = 0;      
-            if (inf >= sup) {
-                return;
-            }
-            Comparable elem_div = list[sup];       
-            while (flag) {
-                while(list[++i].compareTo(elem_div) < 0) ; //Move the index i until it finds an element bigger than elem_div
-                while((list[--j].compareTo(elem_div) > 0) && (j > inf)); //Move the index j until it finds element smaller than elem_div
-                
-                if (i < j) {
-                    temp = list[i];
-                    list[i] = list[j];
-                    list[j] = temp;
-                } else {
-                    flag = false;
+import java.util.ArrayList;
+
+  /***
+	 * This method is the sort algorithm for quickSort
+	 */
+public class quickSort{
+    //Leer los datos
+    LectorDatos lw = new LectorDatos();
+    ArrayList<Integer> arrayint = lw.llamarArray();
+
+public void quick(){
+        //Lee los datos
+        String numerosEnStr = lw.leerArchivo("datos.txt");
+        System.out.println("Los datos del archivo txt: " + numerosEnStr);
+        quickSort testing = new quickSort();
+        int[] array = lw.llamarArrayListaNormal(numerosEnStr);
+        testing.quickSt(array, 0, array.length-1);                 
+        quickSort objeto = new quickSort();
+        //Imprime el array como se creo previamente
+        System.out.println("Arreglo original: ");
+            for(int i = 0; i < array.length; i++){
+                System.out.println(array[i]);
                 }
-            }
-            
-            temp = list[i];
-            list[i] = list[sup];
-            list[sup] = temp;
-            quickSort(list, inf, i - 1);
-            quickSort(list, i + 1, sup);
+                System.out.println("");
+                objeto.quickSt(array, 0, array.length-1);
+}
+
+    /***
+	 * This method is used to show the sorting quickSort algorithm
+	 */
+public void quickSt(int[] array, int low, int high) {
+    if (array == null || array.length == 0)
+        return;
+
+    if (low >= high)
+        return;
+
+    //Elige el pivote
+    int middle = low + (high - low) / 2;
+    int pivot = array[middle];
+
+    //Hacer pivote izquierdo <pivote y derecho>
+    int i = low, j = high;
+    while (i <= j) {
+        while (array[i] < pivot) {
+            i++;
         }
-        
+
+        while (array[j] > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+            i++;
+            j--;
+        }
     }
 
+    // Ordenar recursivamente dos subpartes
+    if (low < j)
+        quickSt(array, low, j);
+
+    if (high > i)
+        quickSt(array, i, high);
+}
 }

@@ -7,7 +7,6 @@
 
 import java.lang.Integer;
 import java.util.ArrayList;
-
 import javax.sound.sampled.SourceDataLine;
 
 public class radixSort{
@@ -20,7 +19,7 @@ public class radixSort{
 	 * @param int[] arreglo
 	 */
     public void radix(int[] arreglo){
-    //MEDIR TIEMPO
+    //INICIAR - Medir Tiempo
       long TInicio, TFin, tiempo;
       TInicio = System.currentTimeMillis();
         int x, i, j;
@@ -43,6 +42,8 @@ public class radixSort{
         }
         System.out.println("El arreglo ordenado con radix es");
         mostrarArreglo(arreglo);
+
+        //FIN - Medir Tiempo
         TFin = System.currentTimeMillis(); 
         tiempo = TFin - TInicio; 
         System.out.println("Tiempo de ejecución en milisegundos: " + tiempo+"ms");

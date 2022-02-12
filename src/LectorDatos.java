@@ -10,7 +10,13 @@ import java.util.ArrayList;
 public class LectorDatos {
     ArrayList<Integer> array = new ArrayList<Integer>();
 
+    /***
+	 * This method is used to rewrite in txt file
+     * @param nombre 
+     * @param max
+	 */
     public void Escribir(String nombre, int max){
+        //Leer y escribir en el archivo
         File f;
         FileWriter w;
         BufferedWriter bw;
@@ -20,10 +26,13 @@ public class LectorDatos {
             w =new FileWriter(f);
             bw = new BufferedWriter(w);
             wr = new PrintWriter(bw);
+            //datos minimos que saldran en el txt
             int min = 1;
+            //datos maximos que saldran en el txt
             max = max;
             int i;
             String texto = "";
+            //obtener el valor de cada dato por un for
             for(i = min; i <=max; i++) {
                 int getRandomValue = (int) (Math.random()*(max-min)) + min;
                 texto += String.valueOf(getRandomValue+" ");
@@ -32,14 +41,21 @@ public class LectorDatos {
             wr.write(texto);
             wr.close();
             bw.close();
+            //En caso de errores
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Ha ocurrido un error "+ e);
         }
     }
+    /***
+	 * This method is used to read the txt file
+     * @param direccion
+     * @return texto
+	 */
     public String leerArchivo(String direccion){
         String texto = "";
         int numero =0;
         try{
+            //Leer el archivo txt
             BufferedReader bf = new BufferedReader(new FileReader(direccion));
             String temp = "";
             String bfRead;
@@ -47,18 +63,26 @@ public class LectorDatos {
                 temp = temp + bfRead; // guardado el texto del archivo
             }
             texto = temp;
+            //En caso de errores
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"No se a podido encontrar el archivo\nIntente de nuevo"+e);
         }
-        
         return texto;
     }
 
+    /***
+     * Call the array with your data
+	 * @return array
+	 */
     public ArrayList<Integer> llamarArray(){
         return array;
 
     }
-
+    /***
+     * separates the data and places it in an array
+     * @param contenidoDelArchivo
+     * @return numerosEnLita
+	 */
     public int[] llamarArrayListaNormal(String contenidoDelArchivo){
         String[] numerosSeparados = contenidoDelArchivo.split(" ");
 
@@ -68,47 +92,8 @@ public class LectorDatos {
             int num = Integer.parseInt(numerosSeparados[i]);
             numerosEnLita[i] = num;
         }
-
-        // System.out.println("Resultado de la lista normal en java");
-        // for (int i = 0; i < numerosEnLita.length; i++) {
-        //     System.out.println("Numero : " + numerosEnLita[i]);
-        // }
-        
         return numerosEnLita;
     }
-
-    /*public static void main(String[] args){
-        
-        //Para la implementacion de radix Sort
-        radixSort ordenar = new radixSort();
-        int vector1[] = {1,2,45,65,89,13};
-
-        System.out.println("arreglo original");
-        ordenar.mostrarArreglo(vector1);
-        ordenar.radix(vector1);
-
-        //para la implementacion de selection Sort
-        int[] data = { 20, 12, 10, 15, 2 };
-        SelectionSort ss = new SelectionSort();
-        ss.selectionSort(data);
-        System.out.println("Arreglo de ordenamiento de seleccion: ");
-        System.out.println(Arrays.toString(data));
-    
-        //Iniciar conteo de medidor de tiempo
-        long TInicio, TFin, tiempo;
-        TInicio = System.currentTimeMillis(); 
-
-
-        //Crear Archivo
-        LectorDatos lw=new LectorDatos();
-        lw.Escribir("C:\\Users\\Bryan\\OneDrive - Universidad del Valle de Guatemala\\Documentos\\UVG\\SEMESTRE III\\Algoritmos y Estructura de Datos\\Hoja de trabajo 3\\HDT3\\src\\datos.txt");
-        //Metodo para generar numeros
-        
-        //Terminar conteo de medidor de tiempo
-        TFin = System.currentTimeMillis(); 
-        tiempo = TFin - TInicio; 
-        System.out.println("Tiempo de ejecucion en milisegundos: " + tiempo+"ms");
-    }*/
 }
 
 
